@@ -8,8 +8,8 @@ import altair as alt
 def get_database_connection():
     conn = mysql.connector.connect(
         host="localhost",
-        user="root",  # replace with your MySQL username
-        password="1995",  # replace with your MySQL password
+        user="root",  
+        password="1995", 
         port=3306,
         database = 'youtube')
     return conn
@@ -446,7 +446,7 @@ elif choice == 'QueryData':
 
             st.dataframe(df)
 
-            if selected_query.startswith("2.") or selected_query.startswith("3.") or selected_query.startswith("4.") or selected_query.startswith("5.") or selected_query.startswith("6.") or selected_query.startswith("7.") or selected_query.startswith("9.") or selected_query.startswith("10."):
+            if selected_query.startswith("1.") or selected_query.startswith("2.") or selected_query.startswith("3.") or selected_query.startswith("4.") or selected_query.startswith("5.") or selected_query.startswith("6.") or selected_query.startswith("7.") or selected_query.startswith("9.") or selected_query.startswith("10."):
                 chart = alt.Chart(df).mark_bar().encode(
                     x=alt.X(df.columns[0], sort='-y', title=column_names[0]),
                     y=alt.Y(df.columns[1], title=column_names[1]),
